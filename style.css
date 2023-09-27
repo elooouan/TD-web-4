@@ -1,0 +1,20 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+article {
+    border: solid rgb(173, 15, 60);
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}

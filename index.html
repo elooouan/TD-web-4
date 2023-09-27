@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <main :class="{ dark: darkTheme }">
+            <button @click="darkTheme=!darkTheme">
+                {{ darkTheme ? "Light" : "Dark" }}
+            </button>
+
+            <h1>Books</h1>
+
+            <section>
+                <input v-model="filter"/>
+                <article v-for="book in selectedBooks">
+                    <h2>{{ book.title }}</h2>
+                    <p>by {{ book.author }}</p>
+                </article>
+            </section>
+
+            <section>
+                <p>
+                    <label>Title </label>
+                    <input v-model="newBook.title"/>
+                    <span v-if="newBookError.title"> Please enter a title</span>
+                </p>
+                <p>
+                    <label>Author </label>
+                    <input v-model="newBook.author"/>
+                    <span v-if="newBookError.author"> Please enter the name of the author(s)</span>
+                </p>
+                <button @click="add"> + </button>
+                <button @click="remove"> remove </button>
+            </section>
+        </main>
+    </div>
+
+    <script src="main.js" defer></script>
+    <script src="vue.global.js"></script>
+</body>
+</html>
